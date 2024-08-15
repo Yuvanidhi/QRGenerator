@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #001007; 
+  color: #333; /* Dark text color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 40px;
+  width: 100%;
+  max-width: 800px; /* Max width for a centered container */
+  background: #FFFFFF; /* Clean white background for the container */
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for a modern feel */
+  transition: box-shadow 0.3s ease;
+  overflow: hidden; /* Prevent overflow */
+}
+
+.App:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on hover */
+}
+
+h1 {
+  font-size: 2.5rem; /* Larger heading for emphasis */
+  color: #004B49; /* Dark teal for a sophisticated look */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.gen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+input[type="text"] {
+  height: 45px;
+  width: 100%;
+  max-width: 500px; /* Optimized width */
+  font-size: 1.1rem;
+  padding: 0 15px;
+  border: 1px solid #004B49; /* Dark teal border */
+  border-radius: 8px;
+  background-color: #F4F6F9; /* Very light gray background */
+  color: #333; /* Dark text color */
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #004B49; /* Highlight border on focus */
+  box-shadow: 0 0 8px rgba(0, 75, 73, 0.3); /* Subtle teal shadow */
+  outline: none;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  height: 45px;
+  width: 120px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  color: #FFFFFF; /* Light text color */
+  background: #004B49; /* Dark teal background for buttons */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background: #003d3b; /* Slightly darker teal on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+button:active {
+  background: #002d2b; /* Even darker shade for active state */
+  transform: translateY(1px); /* Subtle press effect */
+  box-shadow: none;
+}
+
+button.reset {
+  background: #E53935; /* Red color for reset button */
+}
+
+button.reset:hover {
+  background: #d32f2f; /* Darker shade on hover */
+}
+
+.extra {
+  display: flex;
+  justify-content: space-between; /* Align items side by side */
+  gap: 20px;
+  width: 100%;
+  max-width: 600px; /* Max width for extra section */
+}
+
+.color-size {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px; /* Space between color and size options */
+}
+
+input[type="color"] {
+  height: 30px;
+  width: 30px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input[type="range"] {
+  width: 100%;
+  max-width: 250px; /* Adjusted width for range */
+  background: #F4F6F9; /* Light gray background for range */
+  border-radius: 8px;
+}
+
+span {
+  display: block;
+  text-align: center;
+  margin-top: 5px;
+  color: #333; /* Dark text color */
+}
+
+.output-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 500px; /* Max width for output box */
+}
+
+img {
+  max-width: 100%; /* Ensure QR code fits within its container */
+  border-radius: 8px; /* Rounded corners for QR code image */
+}
+
+.loader {
+  font-size: 1.1rem;
+  color: #004B49; /* Dark teal for loader */
+}
+
+.error {
+  font-size: 1rem;
+  color: #E53935; /* Red color for error messages */
+}
+
+.download-button {
+  background-color: #004B49; /* Dark teal for download button */
+  border-radius: 8px;
+}
+
+.download-button:hover {
+  background-color: #003d3b; /* Darker shade on hover */
+}
+
+/* Previous CSS... */
+
+.history {
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 600px;
+  background: #ffffff; /* White background for history box */
+  border: 1px solid #e0e0e0; /* Light gray border */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.history-header h2 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.history-header .clear-all {
+  background: #f44336; /* Red color for clear all button */
+  color: #ffffff; /* White text color */
+}
+
+.history-header .clear-all:hover {
+  background: #d32f2f;
+}
+
+.history-list {
+  max-height: 300px; /* Adjust max-height to fit your design */
+  overflow-y: auto;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #f9f9f9; /* Light background for each item */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+.history-item a {
+  color: #0056b3; /* Link color */
+  text-decoration: none;
+  flex: 1;
+}
+
+.history-item a:hover {
+  text-decoration: underline;
+}
+
+.delete-button {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #f44336; /* Red color for delete button */
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  color: #d32f2f;
+}
+
+@media (max-width: 600px) {
+  .input-box, .extra, .output-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .extra {
+    gap: 10px;
+  }
+}
